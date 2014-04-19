@@ -8,16 +8,28 @@ class Home extends CI_Controller {
      } 
     public function index() {
 	$this->load->model('Home_model');
+	if ($this->ion_auth->logged_in()) {
+        $loggedin = true;
+        } else {
+        $loggedin = false;
+        }
+        $data['loggedin'] = $loggedin;
 	$data['site'] = $this->Home_model->get_site();
 	$data['sections'] = $this->Home_model->get_sections();
 	$this->load->view('frontend/home_view', $data);
     }
 
-    public function edit() {
+    public function editSite() {
 	$id = $this->input->post('id');
 	$attr = $this->input->post('columnname');
 	$newval = $this->input->post('value');
 	$this->load->model('Home_model');
-	$this->Home_model->update($id, $attr, $newval);
+	$this->Home_model->update_site($id, $attr, $newval);
+    }
+    public function editNav() {
+        $id = $this->input->post('id');
+        $newval = $this->input->post('value');
+        $this->load->model('Home_model');
+        $this->Home_model->update_sections($id, $newval);
     }
 }

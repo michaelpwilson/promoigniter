@@ -43,8 +43,12 @@
                         <a href="#page-top"></a>
                     </li>
 		    <?php foreach($sections as $section) : ?>
-                    <li class="page-scroll">
-		    <a href="#<?= $section['content-name'] ?>"><?= $section['content-name'] ?></a> 
+		    <?php if ($loggedin): ?>
+			<li>
+		    <?php else: ?>
+			<li class="page-scroll">
+		    <?php endif; ?>
+		    <a id="<?= $section['content_id'] ?>" href="#<?= $section['content-name'] ?>"><?= $section['content-name'] ?></a> 
                     </li>
 		    <?php endforeach; ?>
                 </ul>
@@ -119,48 +123,10 @@
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo asset_url();?>grayscale/js/grayscale.js"></script>
     <script src="<?php echo asset_url();?>jquery.jeditable.js"></script>
-    <script>
-$(function() {
-$(".intro-header").editable(function(value, settings) {
-  var submitdata = {
-  "id": $("body").attr("class"),
-  "columnname": $(this).attr("class"),
-  "value": value
-  };
-  $.post("home/edit", submitdata);
-  return value;
-  }, {
-  });
 
-$(".intro-text").editable(function(value, settings) {
-  var submitdata = {
-  "id": $("body").attr("class"),
-  "columnname": $(this).attr("class"),
-  "value": value
-  };
-  $.post("home/edit", submitdata);
-  return value;
-  }, {
-  "type": "textarea",
-  "height": "100px",
-  "submit": "OK"
-  });
-$(".intro-content").editable(function(value, settings) {
-  var submitdata = {
-  "id": $("body").attr("class"),
-  "columnname": $(this).attr("class"),
-  "value": value
-  };
-  $.post("home/edit", submitdata);
-  return value;
-  }, {
-  "type": "textarea",
-  "height": "100px",
-  "submit": "OK"
-  });
-
-
-});
-    </script>
+<?php if ($loggedin): ?>
+<script src="<?php echo asset_url();?>grayscale/js/jeditable.content.js"></script>
+<?php else: ?>
+<?php endif; ?>
 </body>
 </html>
