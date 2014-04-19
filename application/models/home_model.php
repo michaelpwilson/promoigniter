@@ -19,5 +19,9 @@ class Home_model extends CI_Model {
   $query = $this->db->get('site'); 
   return $query->row_array();
   }
-
+ function get_sections() {
+  $this->db->select('content-name');
+  $query = $this->db->get("sections");
+  return $query->result_array();
+  }
 }

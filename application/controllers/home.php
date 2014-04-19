@@ -9,6 +9,7 @@ class Home extends CI_Controller {
     public function index() {
 	$this->load->model('Home_model');
 	$data['site'] = $this->Home_model->get_site();
+	$data['sections'] = $this->Home_model->get_sections();
 	$this->load->view('frontend/home_view', $data);
     }
 
@@ -18,5 +19,5 @@ class Home extends CI_Controller {
 	$newval = $this->input->post('value');
 	$this->load->model('Home_model');
 	$this->Home_model->update($id, $attr, $newval);
-	}
+    }
 }

@@ -42,15 +42,11 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+		    <?php foreach($sections as $section) : ?>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+		    <a href="#<?= $section['content-name'] ?>"><?= $section['content-name'] ?></a> 
                     </li>
-                    <li class="page-scroll">
-                        <a href="#download">Download</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
+		    <?php endforeach; ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -80,7 +76,6 @@
             </div>
         </div>
     </section>
-
     <section id="download" class="content-section text-center">
         <div class="download-section">
             <div class="container">
