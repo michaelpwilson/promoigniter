@@ -6,7 +6,7 @@ class Home extends CI_Controller {
     function __construct() {
         parent::__construct(); 
      } 
-     public function index() {
+    public function index() {
 	$this->load->model('Home_model');
 	$data['site'] = $this->Home_model->get_site();
 	$this->load->view('frontend/home_view', $data);

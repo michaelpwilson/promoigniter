@@ -22,7 +22,7 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<body id="page-top" class="<?php echo $site['settings_id']; ?>" data-spy="scroll" data-target=".navbar-custom">
 
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
@@ -63,13 +63,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 id="<?php echo $site['settings_id']; ?>" class="main-header"><?php echo $site['main-header']; ?></h1>
-                        <p id="<?php echo $site['settings_id']; ?>" class="intro-text"><?php echo $site['intro-text']; ?></p>
-                        <div class="page-scroll">
-                            <a href="#about" class="btn btn-circle">
-                                <i class="fa fa-angle-double-down animated"></i>
-                            </a>
-                        </div>
+                        <h1 class="intro-header"><?php echo $site['intro-header']; ?></h1>
+                        <p class="intro-text"><?php echo $site['intro-text']; ?></p>
+                        <div class="intro-content"><?php echo $site['intro-content']; ?></div>
                     </div>
                 </div>
             </div>
@@ -130,9 +126,9 @@
     <script src="<?php echo asset_url();?>jquery.jeditable.js"></script>
     <script>
 $(function() {
-$(".main-header").editable(function(value, settings) {
+$(".intro-header").editable(function(value, settings) {
   var submitdata = {
-  "id": $(this).attr("id"),
+  "id": $("body").attr("class"),
   "columnname": $(this).attr("class"),
   "value": value
   };
@@ -143,7 +139,20 @@ $(".main-header").editable(function(value, settings) {
 
 $(".intro-text").editable(function(value, settings) {
   var submitdata = {
-  "id": $(this).attr("id"),
+  "id": $("body").attr("class"),
+  "columnname": $(this).attr("class"),
+  "value": value
+  };
+  $.post("home/edit", submitdata);
+  return value;
+  }, {
+  "type": "textarea",
+  "height": "100px",
+  "submit": "OK"
+  });
+$(".intro-content").editable(function(value, settings) {
+  var submitdata = {
+  "id": $("body").attr("class"),
   "columnname": $(this).attr("class"),
   "value": value
   };
@@ -155,8 +164,8 @@ $(".intro-text").editable(function(value, settings) {
   "submit": "OK"
   });
 
+
 });
     </script>
 </body>
-
 </html>
