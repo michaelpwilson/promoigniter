@@ -30,8 +30,8 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">
-                    <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap
+                <a id="logo" class="navbar-brand" href="#page-top">
+		<?php echo $site['logo']; ?>
                 </a>
             </div>
 
