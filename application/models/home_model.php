@@ -30,6 +30,15 @@ class Home_model extends CI_Model {
  $this->db->where('content_id', $id);
  $this->db->update('sections', $newData);
  }
+ function update_extras($id, $newval) {
+ $this->load->database();
+ $newData = array(
+ "extras" => $newval
+ );
+ $this->db->where('content_id', $id);
+ $this->db->update('sections', $newData);
+ }
+
  function update_header($id, $newval) {
  $this->load->database();
  $newData = array(
@@ -43,7 +52,7 @@ class Home_model extends CI_Model {
   return $query->row_array();
   }
  function get_sections() {
-  $this->db->select('content_id, content-type, content-name, header, text, extras');
+  $this->db->select('content_id, content-type, content-name, header, text, extras, class');
   $query = $this->db->get("sections");
   return $query->result_array();
   }

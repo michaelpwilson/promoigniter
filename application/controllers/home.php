@@ -45,6 +45,6 @@ class Home extends CI_Controller {
 	} elseif($attr == "extras"){
 	$this->Home_model->update_extras($id, $newval);
 	}
-	}
      }
+    }
 }

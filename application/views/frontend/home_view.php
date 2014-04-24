@@ -73,31 +73,30 @@
     </section>
 
  <?php foreach($sections as $section) : ?>
+<section id="<?= $section['content-name'] ?>" class="<?= $section['class'] ?>">
 	<?php if($section['content-type'] == "text") { ?>
-          <section id="<?= $section['content-name'] ?>" class="container content-section text-center">
            <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
 	 <h2 id="<?= $section['content_id'] ?>" class="header"><?= $section['header'] ?></h2>  
 	 <div id="<?= $section['content_id'] ?>" class="text"><?= $section['text'] ?></div>
+	 <div id="<?= $section['content_id'] ?>" class="extras"><?= $section['extras']; ?></div>
              </div>
 	     </div>
-           </section> 
 	<?php } else {
 	   if($section['content-type'] == "beauty"){ ?>
-     <section id="<?= $section['content-name'] ?>" class="content-section text-center">
 	<div class="download-section">
            <div class="container">
               <div class="col-lg-8 col-lg-offset-2">
 		<h2 id="<?= $section['content_id'] ?>" class="header"><?php echo $section['header']; ?></h2>
 		<div id="<?= $section['content_id'] ?>" class="text"><?php echo $section['text']; ?></div>
-		<a href="http://startbootstrap.com/grayscale" class="btn btn-default btn-lg">Visit Download Page</a>
+		<div id="<?= $section['content_id'] ?>" class="extras"><?php echo $section['extras']; ?></div>
 	      </div>
 	   </div>
 	 </div>
-     </section>
          <?php
           }
        } ?>
+  </section>
  <?php endforeach; ?>
 
     <div id="map"></div>
