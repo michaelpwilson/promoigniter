@@ -30,6 +30,12 @@ class Home extends CI_Controller {
         $id = $this->input->post('id');
         $newval = $this->input->post('value');
         $this->load->model('Home_model');
-        $this->Home_model->update_sections($id, $newval);
+        $this->Home_model->update_nav($id, $newval);
+    }
+     public function editSections() {
+        $id = $this->input->post('id');
+        $newval = $this->input->post('value');
+        $this->load->model('Home_model');
+        $this->Home_model->update_text($id, $newval);
     }
 }

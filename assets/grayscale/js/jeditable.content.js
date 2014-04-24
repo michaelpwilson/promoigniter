@@ -47,5 +47,17 @@ $(".nav li a").editable(function(value, settings) {
   "type": "text",
   "submit": "OK"
   });
+$("section .content-text").editable(function(value, settings) {
+  var submitdata = {
+  "id": $(this).attr("id"),
+  "value": value
+  };
+  $.post("home/editSections", submitdata);
+  return value;
+  }, {
+  "type": "textarea",
+  "submit": "OK"
+  });
+
 });
 

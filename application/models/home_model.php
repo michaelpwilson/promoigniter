@@ -14,10 +14,18 @@ class Home_model extends CI_Model {
  $this->db->where('settings_id', $id);
  $this->db->update('site', $newData);
  }
- function update_sections($id, $newval) {
+ function update_nav($id, $newval) {
  $this->load->database();
  $newData = array(
  "content-name" => $newval
+ );
+ $this->db->where('content_id', $id);
+ $this->db->update('sections', $newData);
+ }
+ function update_text($id, $newval) {
+ $this->load->database();
+ $newData = array(
+ "text" => $newval
  );
  $this->db->where('content_id', $id);
  $this->db->update('sections', $newData);
@@ -27,7 +35,7 @@ class Home_model extends CI_Model {
   return $query->row_array();
   }
  function get_sections() {
-  $this->db->select('content_id, content-name');
+  $this->db->select('content_id, content-type, content-name, text');
   $query = $this->db->get("sections");
   return $query->result_array();
   }
