@@ -76,14 +76,9 @@
 	<?php if($section['content-type'] == "text") { ?>
           <section id="<?= $section['content-name'] ?>" class="container content-section text-center">
            <div class="row">
-            <div id="<?= $section['content_id'] ?>" class="col-lg-8 col-lg-offset-2 content-text">
-	   <?= $section['text'] ?>
-	     <ul class="list-inline banner-social-buttons">
-             <li><a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a></li>
-             <li><a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a></li>
-             <li><a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-             </li>
-             </ul>
+            <div class="col-lg-8 col-lg-offset-2">
+	 <h2 id="<?= $section['content_id'] ?>" class="header"><?= $section['header'] ?></h2>  
+	 <div id="<?= $section['content_id'] ?>" class="text"><?= $section['text'] ?></div>
              </div>
 	     </div>
            </section> 
@@ -92,8 +87,9 @@
      <section id="<?= $section['content-name'] ?>" class="content-section text-center">
 	<div class="download-section">
            <div class="container">
-              <div id="<?= $section['content_id'] ?>" class="col-lg-8 col-lg-offset-2 content-text">
-		<?php echo $section['text']; ?>
+              <div class="col-lg-8 col-lg-offset-2">
+		<h2 id="<?= $section['content_id'] ?>" class="header"><?php echo $section['header']; ?></h2>
+		<div id="<?= $section['content_id'] ?>" class="text"><?php echo $section['text']; ?></div>
 		<a href="http://startbootstrap.com/grayscale" class="btn btn-default btn-lg">Visit Download Page</a>
 	      </div>
 	   </div>

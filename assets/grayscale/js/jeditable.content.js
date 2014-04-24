@@ -47,9 +47,22 @@ $(".nav li a").editable(function(value, settings) {
   "type": "text",
   "submit": "OK"
   });
-$("section .content-text").editable(function(value, settings) {
+$("section .header").editable(function(value, settings) {
   var submitdata = {
   "id": $(this).attr("id"),
+  "columnname": $(this).attr("class"),
+  "value": value
+  };
+  $.post("home/editSections", submitdata);
+  return value;
+  }, {
+  "type": "text",
+  "submit": "OK"
+  });
+$("section .text").editable(function(value, settings) {
+  var submitdata = {
+  "id": $(this).attr("id"),
+  "columnname": $(this).attr("class"),
   "value": value
   };
   $.post("home/editSections", submitdata);
@@ -58,6 +71,7 @@ $("section .content-text").editable(function(value, settings) {
   "type": "textarea",
   "submit": "OK"
   });
+
 
 });
 

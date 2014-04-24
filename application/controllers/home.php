@@ -34,8 +34,17 @@ class Home extends CI_Controller {
     }
      public function editSections() {
         $id = $this->input->post('id');
+	$attr = $this->input->post('columnname');
         $newval = $this->input->post('value');
         $this->load->model('Home_model');
+	if($attr == "text"){
         $this->Home_model->update_text($id, $newval);
-    }
+	} else {
+	if($attr == "header"){
+	$this->Home_model->update_header($id, $newval);
+	} elseif($attr == "extras"){
+	$this->Home_model->update_extras($id, $newval);
+	}
+	}
+     }
 }
