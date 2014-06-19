@@ -16,7 +16,12 @@ class Home extends CI_Controller {
         $data['loggedin'] = $loggedin;
 	$data['site'] = $this->Home_model->get_site();
 	$data['sections'] = $this->Home_model->get_sections();
+	$data['meta'] = $this->Home_model->get_meta();
+	$this->load->helper('meta_helper');
+	$this->load->helper('css_helper');
+	$this->load->view('frontend/includes/head', $data);
 	$this->load->view('frontend/home_view', $data);
+	$this->load->view('frontend/includes/foot', $data);
     }
 
     public function editSite() {

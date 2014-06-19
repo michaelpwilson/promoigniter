@@ -6,4 +6,12 @@
        {
           return base_url().'assets/';
        }
+       function theme_url($theme_folder)
+       {
+	  return asset_url() . $theme_folder . '/';
+       }
+       function css_folder($theme_folder)
+       {
+	  return theme_url($theme_folder) . 'css/';
+       }
      }

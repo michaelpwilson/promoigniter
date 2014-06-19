@@ -4,10 +4,10 @@ class Home_model extends CI_Model {
 
  public function __construct() {
    parent::__construct();
+   $this->load->database();
  }
 
  function update_site($id, $attr, $newval) {
- $this->load->database();
  $newData = array(
  $attr => $newval
  );
@@ -15,7 +15,6 @@ class Home_model extends CI_Model {
  $this->db->update('site', $newData);
  }
  function update_nav($id, $newval) {
- $this->load->database();
  $newData = array(
  "content-name" => $newval
  );
@@ -23,7 +22,6 @@ class Home_model extends CI_Model {
  $this->db->update('sections', $newData);
  }
  function update_text($id, $newval) {
- $this->load->database();
  $newData = array(
  "text" => $newval
  );
@@ -31,7 +29,6 @@ class Home_model extends CI_Model {
  $this->db->update('sections', $newData);
  }
  function update_extras($id, $newval) {
- $this->load->database();
  $newData = array(
  "extras" => $newval
  );
@@ -40,7 +37,6 @@ class Home_model extends CI_Model {
  }
 
  function update_header($id, $newval) {
- $this->load->database();
  $newData = array(
  "header" => $newval
  );
@@ -50,6 +46,11 @@ class Home_model extends CI_Model {
  function get_site() {
   $query = $this->db->get('site'); 
   return $query->row_array();
+  }
+ function get_meta() {
+  $this->db->select('encoding, charset, content, http-equiv, name');
+  $query = $this->db->get("meta");
+  return $query->result_array();
   }
  function get_sections() {
   $this->db->select('content_id, content-type, content-name, header, text, extras, class');
