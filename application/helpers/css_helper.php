@@ -17,7 +17,7 @@ if ( ! function_exists('test_method'))
     $theme_folder = $site['theme_folder'];
     echo '<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />';
     echo '<link href="' . css_folder($theme_folder) . $site['custom_css'] . '" rel="stylesheet">';
-    echo '<link href="' . asset_url() . 'sidebar.css" rel="stylesheet">';
+    echo '<link href="' . asset_url() . 'promoigniter.css" rel="stylesheet">';
     }
 
     function core_fonts($site)
@@ -32,9 +32,9 @@ if ( ! function_exists('test_method'))
     function core_js($site, $loggedin)
     {
       $theme_folder = $site['theme_folder'];
-      echo '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>';
       echo '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>';
       echo '<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>';
+      echo '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>';
            if($site['cdn'] == 1){
                 if($site['css'] == "bootstrap"){
                 echo '<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>';
@@ -51,7 +51,7 @@ if ( ! function_exists('test_method'))
 	echo '<script src="' . theme_url($theme_folder) . 'js/'. $theme_folder  . '.js"></script>';
 	echo '<script src="' . asset_url() . 'jquery.jeditable.js"></script>';
 	echo '<script src="' . asset_url() . 'iris.min.js"></script>';
-	echo '<script src="' . asset_url() . 'sidebar.js"></script>';
+	echo '<script src="' . asset_url() . 'promoigniter.js"></script>';
 	echo '<script src="' . theme_url($theme_folder)  . 'js/classie.js"></script>';
 	echo '<script src="' . theme_url($theme_folder)  . 'js/cbpAnimatedHeader.js"></script>';
            } else {
