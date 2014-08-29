@@ -5,7 +5,7 @@ $(".intro-header").editable(function(value, settings) {
   "columnname": $(this).attr("class"),
   "value": value,
   };
-  $.post("home/editSite", submitdata);
+  $.post("website/editSite", submitdata);
   return value;
   }, {
   });
@@ -15,7 +15,7 @@ $(".intro-text").editable(function(value, settings) {
   "columnname": $(this).attr("class"),
   "value": value
   };
-  $.post("home/editSite", submitdata);
+  $.post("website/editSite", submitdata);
   return value;
   }, {
   "type": "textarea",
@@ -28,7 +28,7 @@ $(".intro-content").editable(function(value, settings) {
   "columnname": $(this).attr("class"),
   "value": value
   };
-  $.post("home/editSite", submitdata);
+  $.post("website/editSite", submitdata);
   return value;
   }, {
   "type": "textarea",
@@ -40,7 +40,7 @@ $(".nav li a").editable(function(value, settings) {
   "id": $(this).attr("id"),
   "value": value
   };
-  $.post("home/editNav", submitdata);
+  $.post("website/editNav", submitdata);
   return value;
   }, {
   "type": "text",
@@ -52,7 +52,7 @@ $("section .header").editable(function(value, settings) {
   "columnname": $(this).attr("class"),
   "value": value
   };
-  $.post("home/editSections", submitdata);
+  $.post("website/editSections", submitdata);
   return value;
   }, {
   "type": "textarea",
@@ -64,7 +64,7 @@ $("section .text").editable(function(value, settings) {
   "columnname": $(this).attr("class"),
   "value": value
   };
-  $.post("home/editSections", submitdata);
+  $.post("website/editSections", submitdata);
   return value;
   }, {
   "type": "textarea",
@@ -76,7 +76,7 @@ $("section .extras").editable(function(value, settings) {
   "columnname": $(this).attr("class"),
   "value": value
   };
-  $.post("home/editSections", submitdata);
+  $.post("website/editSections", submitdata);
   return value;
   }, {
   "type": "textarea",

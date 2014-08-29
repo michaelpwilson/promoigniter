@@ -29,7 +29,7 @@ $('#secondaryBackgroundColor').iris({
   var submitdata = {
   "backgroundcolor": ui.color.toString(),
   };
-  $.post("home/secondaryBackground", submitdata);
+  $.post("website/secondaryBackground", submitdata);
     $(".intro").css( 'background-color', ui.color.toString());
     $(".beauty").css( 'background-color', ui.color.toString());
     }
@@ -40,7 +40,7 @@ $('#secondaryFontColor').iris({
       var submitdata = {
        "fontcolor": ui.color.toString(),
       };
-      $.post("home/secondaryFontColor", submitdata);
+      $.post("website/secondaryFontColor", submitdata);
       $(".intro").css( 'color', ui.color.toString());
       $(".beauty").css( 'color', ui.color.toString());
     }
