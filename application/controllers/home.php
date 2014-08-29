@@ -19,9 +19,12 @@ class Home extends CI_Controller {
 	$data['meta'] = $this->Home_model->get_meta();
 	$this->load->helper('meta_helper');
 	$this->load->helper('css_helper');
-	$this->load->view('frontend/includes/head', $data);
-	$this->load->view('frontend/home_view', $data);
-	$this->load->view('frontend/includes/foot', $data);
+	$this->load->view('website/includes/head', $data);
+	if($loggedin) {
+	$this->load->view('website/includes/sidebar', $data);
+	}
+	$this->load->view('website/home_view', $data);
+	$this->load->view('website/includes/foot', $data);
     }
 
     public function editSite() {
@@ -30,6 +33,18 @@ class Home extends CI_Controller {
 	$newval = $this->input->post('value');
 	$this->load->model('Home_model');
 	$this->Home_model->update_site($id, $attr, $newval);
+    }
+    public function secondaryBackground() {
+        $attr = "secondary-background";
+        $newval = $this->input->post('backgroundcolor');
+        $this->load->model('Home_model');
+        $this->Home_model->secondary_background($attr, $newval);
+    }
+    public function secondaryFontColor() {
+        $attr = "secondary-font-color";
+        $newval = $this->input->post('fontcolor');
+        $this->load->model('Home_model');
+        $this->Home_model->secondary_fontcolor($attr, $newval);
     }
     public function editNav() {
         $id = $this->input->post('id');

@@ -91,7 +91,6 @@ hr.star-primary:after {
 .intro {
     text-align: center;
     color: #fff;
-    background: #18bc9c;
 }
 
 .intro .container {
@@ -187,7 +186,7 @@ section h2 {
     font-size: 3em;
 }
 
-section.success {
+section.beauty {
     color: #fff;
     background: #18bc9c;
 }
