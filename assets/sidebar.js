@@ -1,4 +1,5 @@
 $(document).ready( function (){
+
   $( "#sidebar-wrapper" ).simpleSidebar({
       settings: {
         opener: "#menu-toggle",

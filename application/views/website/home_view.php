@@ -6,6 +6,7 @@
 
   /* Get the navbar */
   navbar($site['logo'], $loggedin, $sections, $site['navbar-class']);
+
   echo '<div class="site-wrapper">';
   /* Get the intro */
   intro($site['intro-header'], $site['intro-text'], $site['intro-content'], $site['secondary-background'], $site['secondary-font-color']);

@@ -45,10 +45,10 @@ if ( ! function_exists('test_method'))
                 }
      if ($loggedin) {
 	echo '<script src="' . asset_url() . 'jeditable.content.js"></script>';
+        echo '<script src="' . asset_url() . 'jquery.simplesidebar.min.js"></script>';
      }
 	echo '<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>';
 	echo '<script src="' . theme_url($theme_folder) . 'js/'. $theme_folder  . '.js"></script>';
-        echo '<script src="' . asset_url() . 'jquery.simplesidebar.min.js"></script>';
 	echo '<script src="' . asset_url() . 'jquery.jeditable.js"></script>';
 	echo '<script src="' . asset_url() . 'iris.min.js"></script>';
 	echo '<script src="' . asset_url() . 'sidebar.js"></script>';
