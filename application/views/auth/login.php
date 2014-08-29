@@ -25,13 +25,13 @@
   <div class="row">
         <div class="col-md-12">
             <div class="error-template">
-<?php echo form_open("auth/login");?>
+<?php echo form_open('auth/login', 'class="form-horizontal"');?>
 <h1><?php echo lang('login_heading');?></h1>
 <div class="alert alert-info"><?php echo lang('login_subheading');?></div>
 <?php echo $message;?>
   <div class="form-group">
     <?php echo lang('login_identity_label', 'identity');?><br>
-    <?php echo form_input($identity);?>
+    <?php echo form_input($identity, 'class="form-control"');?>
   </div>
   <div class="form-group">
     <?php echo lang('login_password_label', 'password');?><br>
@@ -41,7 +41,7 @@
     <?php echo lang('login_remember_label', 'remember');?>
     <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
   </div>
-  <div class="form-group"><?php echo form_submit('submit', lang('login_submit_btn'));?></div>
+  <div class="form-group"><?php echo form_submit('submit', lang('login_submit_btn'), 'class="btn btn-lg btn-info"');?></div>
 
 <?php echo form_close();?>
 

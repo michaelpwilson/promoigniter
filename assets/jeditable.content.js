@@ -1,15 +1,14 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 $(".intro-header").editable(function(value, settings) {
   var submitdata = {
   "id": $("body").attr("class"),
   "columnname": $(this).attr("class"),
-  "value": value
+  "value": value,
   };
   $.post("home/editSite", submitdata);
   return value;
   }, {
   });
-
 $(".intro-text").editable(function(value, settings) {
   var submitdata = {
   "id": $("body").attr("class"),
@@ -56,7 +55,7 @@ $("section .header").editable(function(value, settings) {
   $.post("home/editSections", submitdata);
   return value;
   }, {
-  "type": "text",
+  "type": "textarea",
   "submit": "OK"
   });
 $("section .text").editable(function(value, settings) {

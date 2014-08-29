@@ -6,7 +6,6 @@ class Home_model extends CI_Model {
    parent::__construct();
    $this->load->database();
  }
-
  function update_site($id, $attr, $newval) {
  $newData = array(
  $attr => $newval
@@ -35,7 +34,6 @@ class Home_model extends CI_Model {
  $this->db->where('content_id', $id);
  $this->db->update('sections', $newData);
  }
-
  function update_header($id, $newval) {
  $newData = array(
  "header" => $newval
@@ -43,6 +41,21 @@ class Home_model extends CI_Model {
  $this->db->where('content_id', $id);
  $this->db->update('sections', $newData);
  }
+
+ function secondary_background($attr, $newval) {
+ $newData = array(
+ $attr => $newval
+ );
+ $this->db->update('site', $newData);
+ }
+
+ function secondary_fontcolor($attr, $newval) {
+ $newData = array(
+ $attr => $newval
+ );
+ $this->db->update('site', $newData);
+ }
+
  function get_site() {
   $query = $this->db->get('site'); 
   return $query->row_array();
